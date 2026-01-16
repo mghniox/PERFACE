@@ -62,7 +62,7 @@ export async function analyzeAction(prevState, formData) {
 
         <article>
             <h3>🧠 Sikap & Kepribadian</h3>
-            <p><strong>Ciri Tampak:</strong> 2–3 butir (mis. disiplin, pemalas, kurang percaya diri, Anti sosial).</p>
+            <p><strong>Ciri Tampak:</strong> 2–3 butir (mis. disiplin, pemalas, kurang percaya diri, Anti sosial, Ramah, Pekerja Keras).</p>
         </article>
 
         <article>
@@ -107,7 +107,7 @@ export async function analyzeAction(prevState, formData) {
     headers: {
         Authorization: `Bearer ${OPENROUTER_API_KEY}`,
         "Content-Type": "application/json",
-        "Referer": "http://localhost:3000",
+        "Referer": "yourapp.vercel.app",
         "X-Title" : "PERFACE"
     },
     body: JSON.stringify(body),
