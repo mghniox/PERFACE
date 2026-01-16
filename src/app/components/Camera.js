@@ -180,9 +180,6 @@ function Camera() {
           audio={false}
           ref={webcamRef}
           videoConstraints={videoConstrains}
-          className={`w-full ${
-            isPortrait ? "aspect-9/16" : "aspect-video"
-          } object-cover`}
           mirrored
           screenshotFormat="image/jpeg"
           screenshotQuality={0.9}

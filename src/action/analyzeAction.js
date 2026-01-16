@@ -26,17 +26,19 @@ export async function analyzeAction(prevState, formData) {
     Jika TIDAK ada WAJAH: balas persis:
     <p>Mana orangnya nih ! </p>
 
-    Jika ADA manusia berupa wajah maupun pose, isi SEMUA bagian di bawah secara singkat:
+    Jika ADA manusia berupa wajah maupun pose, isi SEMUA bagian di bawah secara singkat :
 
     <section>
         <h2>🙂 Ekspresi Wajah</h2>
             <ul>
-                <li>Emosi dominan (mis. senyum tipis/ceria/pemarah)</li>
+                <li>Emosi dominan (mis. senyum tipis/datar/pemarah)</li>
                 <li>Arah pandang, gestur & tatapan mata (menghadap kamera/menoleh; bahu rileks/tegang tatapan tajam/hangat)</li>
-                <li>Nuansa umum (energik/pemalas/pengangguran)</li>
+                <li>Nuansa umum (energik/pemalas/pengangguran/santai)</li>
+                <li>Karakter Wajah (Pemarah/Ramah/cemberut)</li>
+                <li>Personality type(Leader, Architect, Logician dan lainnya) sertakan penjelasan singkat yang mudah dimengerti</li>
             </ul>
     </section>
-
+    
     <section>
         <h2>🔮 Ramalan dari Wajah</h2>
 
@@ -45,7 +47,7 @@ export async function analyzeAction(prevState, formData) {
             <p><strong>Indikator:</strong> 1–2 poin dari ekspresi/pose.</p>
             <p><strong>Ramalan:</strong> 1–2 kalimat Kritik tentang arah/peluang kerja.</p>
         </article>
-
+        
         <article>
             <h3>❤️ Jodoh/Cinta</h3>
             <p><strong>Indikator:</strong> 1 poin dari bahasa tubuh/kerapian.</p>
@@ -54,13 +56,13 @@ export async function analyzeAction(prevState, formData) {
 
         <article>
             <h3>📈 Masa Depan (1–2 tahun)</h3>
-            <p><strong>Indikator:</strong> 1 poin (ketekunan/optimisme/keyakinan dari raut muka).</p>
+            <p><strong>Indikator:</strong> 1 poin (keyakinan dari raut muka).</p>
             <p><strong>Ramalan:</strong> 1–2 kalimat target realistis.</p>
         </article>
 
         <article>
             <h3>🧠 Sikap & Kepribadian</h3>
-            <p><strong>Ciri Tampak:</strong> 2–3 butir (mis. disiplin, pemalas, kurang percaya diri).</p>
+            <p><strong>Ciri Tampak:</strong> 2–3 butir (mis. disiplin, pemalas, kurang percaya diri, Anti sosial).</p>
         </article>
 
         <article>
