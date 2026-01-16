@@ -107,7 +107,7 @@ export async function analyzeAction(prevState, formData) {
     headers: {
         Authorization: `Bearer ${OPENROUTER_API_KEY}`,
         "Content-Type": "application/json",
-        "Referer": "yourapp.vercel.app",
+        "Referer": "https://yourapp.vercel.app",
         "X-Title" : "PERFACE"
     },
     body: JSON.stringify(body),
