@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useRef, useState, useEffect, useMemo } from "react";
 import Webcam from "react-webcam";
 import { FiBookOpen, FiCamera, FiRefreshCw } from "react-icons/fi";
@@ -89,7 +90,11 @@ function Camera() {
     canvas.height = targetH;
 
     const context = canvas.getContext("2d"); // mencetak default image menjadi 2d
+    context.save()
+    context.scale(-1, 1)
+    context.translate(-targetW, 0)
     context.drawImage(video, sx, sy, sw, sh, 0, 0, targetW, targetH);
+    context.restore()
 
     const result = canvas.toDataURL("image/jpeg", 0.9);
     console.log(result)
@@ -240,7 +245,7 @@ function Camera() {
       <section ref={resultRef} className="w-full">
         <div className="p-6 mt-4 shadow rounded-xl border bg-gray-800 border-gray-700">
           <div className="flex items-center mb-3 gap-2 text-xl text-yellow-400">
-            <FiBookOpen /> Hasil Ramalan
+            <FiBookOpen /> Hasil Analisis
           </div>
           {isTyping && !typedHtml && (
             <div className="flex items-center text-sm text-gray-500 gap-1">
@@ -252,14 +257,15 @@ function Camera() {
           {htmlToRender.trim() ? (
             <div
               className="text-base leading-6 
-                        [&_section]:mt-3
-                        [&_h2]:mt-3 [&_h2]:text-lg [&_h2]:font-bold"
+                        [&_section]:mt-5
+                        [&_h2]:mt-3 [&_h2]:text-lg [&_h2]:font-bold
+                        [&_article]:mt-5"
               dangerouslySetInnerHTML={{ __html: htmlToRender }}
             />
           ) : (
             <div className="bg-gray-500 p-4 rounded-xl mt-2">
               <p className="font-semibold text-white ">
-                Wajib Pose Loh Yaa !!
+                Pose yang Keren !!
               </p>
             </div>
           )}

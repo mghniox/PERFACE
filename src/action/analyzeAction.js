@@ -31,9 +31,9 @@ export async function analyzeAction(prevState, formData) {
     <section>
         <h2>🙂 Ekspresi Wajah</h2>
             <ul>
-                <li>Emosi dominan (mis. senyum tipis/ceria/tenang/fokus)</li>
-                <li>Arah pandang & gestur (menghadap kamera/menoleh; bahu rileks/tegang)</li>
-                <li>Nuansa umum (rapi/kasual/energik)</li>
+                <li>Emosi dominan (mis. senyum tipis/ceria/pemarah)</li>
+                <li>Arah pandang, gestur & tatapan mata (menghadap kamera/menoleh; bahu rileks/tegang tatapan tajam/hangat)</li>
+                <li>Nuansa umum (energik/pemalas/pengangguran)</li>
             </ul>
     </section>
 
@@ -43,43 +43,43 @@ export async function analyzeAction(prevState, formData) {
         <article>
             <h3>💼 Pekerjaan/Karier</h3>
             <p><strong>Indikator:</strong> 1–2 poin dari ekspresi/pose.</p>
-            <p><strong>Ramalan:</strong> 1–2 kalimat tegas tentang arah/peluang kerja.</p>
+            <p><strong>Ramalan:</strong> 1–2 kalimat Kritik tentang arah/peluang kerja.</p>
         </article>
 
         <article>
             <h3>❤️ Jodoh/Cinta</h3>
             <p><strong>Indikator:</strong> 1 poin dari bahasa tubuh/kerapian.</p>
-            <p><strong>Ramalan:</strong> 1–2 kalimat positif (tidak deterministik).</p>
+            <p><strong>Ramalan:</strong> 1–2 kalimat negatif (tidak selalu positif).</p>
         </article>
 
         <article>
             <h3>📈 Masa Depan (1–2 tahun)</h3>
-            <p><strong>Indikator:</strong> 1 poin (ketekunan/optimisme dari raut muka).</p>
+            <p><strong>Indikator:</strong> 1 poin (ketekunan/optimisme/keyakinan dari raut muka).</p>
             <p><strong>Ramalan:</strong> 1–2 kalimat target realistis.</p>
         </article>
 
         <article>
             <h3>🧠 Sikap & Kepribadian</h3>
-            <p><strong>Ciri Tampak:</strong> 2–3 butir (mis. disiplin, hangat, percaya diri).</p>
+            <p><strong>Ciri Tampak:</strong> 2–3 butir (mis. disiplin, pemalas, kurang percaya diri).</p>
         </article>
 
         <article>
             <h3>🍀 Keberuntungan Minggu Ini</h3>
             <p>
                 <strong>Angka:</strong> 1–99,
-                <strong>Warna:</strong> 1 warna,
+                <strong>Warna:</strong> 1 warna(berubah-ubah tidak selalu warna hijau),
                 <strong>Skala:</strong> 0–10
             </p>
-            <p><strong>Tips Singkat:</strong> 1 kalimat praktis.</p>
+            <p><strong>Tips Singkat:</strong> 1 kalimat praktis yang cukup tajam untuk menjadi bahan introspeksi diri.</p>
         </article>
     </section>
 
     <section>
-        <h2>✅ Rekomendasi Cepat</h2>
+        <h2>✅ Saran Dalam Waktu Dekat</h2>
         <ol>
-            <li>To-do 1</li>
-            <li>To-do 2</li>
-            <li>To-do 3</li>
+            <li></li>
+            <li></li>
+            <li></li>
         </ol>
     </section>`;
 
@@ -88,7 +88,7 @@ export async function analyzeAction(prevState, formData) {
     messages: [
       {
         role: "system",
-        content: "anda asisten penganalisis foto dan profesi kamu adalah seorang profesional psikiater,keluarkan HTML ringkas dan aman"
+        content: "anda penganalisis foto dan profesi kamu adalah seorang PENGKRITIK TAJAM ,keluarkan HTML ringkas dan aman"
       },{
         role: "user",
         content: [
