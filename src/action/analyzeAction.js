@@ -99,7 +99,7 @@ export async function analyzeAction(prevState, formData) {
         ]
       }
     ],
-    max_tokens: 900,
+    max_tokens:600,
     temperature: 0.2
   };
   const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
@@ -107,7 +107,7 @@ export async function analyzeAction(prevState, formData) {
     headers: {
         Authorization: `Bearer ${OPENROUTER_API_KEY}`,
         "Content-Type": "application/json",
-        "Referer": "https://perface.vercel.app",
+        "Referer": process.env.NODE_ENV === 'production' ? 'https://perface.vercel.app/' : 'http://localhost:3000',
         "X-Title" : "PERFACE"
     },
     body: JSON.stringify(body),
