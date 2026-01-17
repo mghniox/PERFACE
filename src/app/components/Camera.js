@@ -262,7 +262,7 @@ function Camera() {
           ) : (
             <div className="bg-gray-500 p-4 rounded-xl mt-2">
               <p className="font-semibold text-white ">
-                Pose yang Keren !!
+                Pose dulu yang Keren terus klik Capture Habis tuh ramal dehh !!
               </p>
             </div>
           )}
