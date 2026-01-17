@@ -71,7 +71,7 @@ function Camera() {
     const vw = video.videoWidth, vh = video.videoHeight;
 
     const targetW = isPortrait ? 720 : 1280;
-    const targetH = isPortrait ? 960 : 720;
+    const targetH = isPortrait ? 720 : 720;
 
     const srcAspect = vw / vh, dstAspect = targetW / targetH;
 
