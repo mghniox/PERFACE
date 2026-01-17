@@ -79,9 +79,9 @@ export async function analyzeAction(prevState, formData) {
     <section>
         <h2>✅ Saran Dalam Waktu Dekat</h2>
         <ol>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>To-do 1</li>
+            <li>To-do 2</li>
+            <li>To-do 3</li>
         </ol>
     </section>`;
 
