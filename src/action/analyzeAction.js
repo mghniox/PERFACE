@@ -1,5 +1,6 @@
 "use server"
 
+export const runtime = "nodejs";
 export async function analyzeAction(prevState, formData) {
   const imageDataUrl = String(formData.get("image") || "");
   const rid = String(formData.get("rid") || "");
@@ -31,7 +32,7 @@ export async function analyzeAction(prevState, formData) {
     <section>
         <h2>🙂 Ekspresi Wajah</h2>
             <ul>
-                <li>Emosi dominan (mis. senyum tipis/datar/pemarah)</li>
+                <li>Emosi dominan (mis. senyum,datar,sedih dan lainnya)</li>
                 <li>Arah pandang, gestur & tatapan mata (menghadap kamera/menoleh; bahu rileks/tegang tatapan tajam/hangat)</li>
                 <li>Nuansa umum (energik/pemalas/pengangguran/santai)</li>
                 <li>Karakter Wajah (Pemarah/Ramah/cemberut)</li>
@@ -102,6 +103,9 @@ export async function analyzeAction(prevState, formData) {
     max_tokens:600,
     temperature: 0.2
   };
+
+  const controller = new AbortController()
+  const timeoutId = setTimeout(() => controller.abort(), 10000)
   const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
     headers: {
@@ -113,6 +117,7 @@ export async function analyzeAction(prevState, formData) {
     body: JSON.stringify(body),
     cache: "no-store"
   })
+  clearTimeout(timeoutId)
 
   if(!res.ok) {
     const t = await res.text()

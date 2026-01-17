@@ -71,7 +71,7 @@ function Camera() {
     const vw = video.videoWidth, vh = video.videoHeight;
 
     const targetW = isPortrait ? 720 : 1280;
-    const targetH = isPortrait ? 1280 : 720;
+    const targetH = isPortrait ? 960 : 720;
 
     const srcAspect = vw / vh, dstAspect = targetW / targetH;
 
@@ -93,7 +93,7 @@ function Camera() {
     context.save()
     context.scale(-1, 1)
     context.translate(-targetW, 0)
-    context.drawImage(video, sx, sy, sw, sh, 0, 0, targetW, targetH);
+    context.drawImage(video, 0, 0, vw, vh, 0, 0, targetW, targetH);
     context.restore()
 
     const result = canvas.toDataURL("image/jpeg", 0.9);
