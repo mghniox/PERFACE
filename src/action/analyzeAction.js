@@ -1,6 +1,5 @@
 "use server"
 
-export const runtime = "nodejs";
 export async function analyzeAction(prevState, formData) {
   const imageDataUrl = String(formData.get("image") || "");
   const rid = String(formData.get("rid") || "");
