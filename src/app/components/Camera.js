@@ -135,7 +135,7 @@ function Camera() {
 
     const raw = typeof state.html === "string" ? state.html : "";
     setIsLaoding(false);
-    
+
     if (!raw.trim()) {
       setResponseHtml("");
       setTypedHtml("");
@@ -170,7 +170,7 @@ function Camera() {
     step();
   }, [state]);
 
-  const htmlToRender = cleanUpHTML(isTyping ? typedHtml : responseHtml 
+  const htmlToRender = cleanUpHTML(isTyping ? typedHtml : responseHtml
   );
 
   return (
@@ -223,11 +223,10 @@ function Camera() {
             <button
               type="submit"
               disabled={!photoDataUrl || isLoading}
-              className={`px-4 h-14 rounded-xl text-white shadow transition ${
-                !photoDataUrl
-                  ? "bg-gray-400"
-                  : "bg-emerald-500  hover:bg-emerald-700"
-              }`}
+              className={`px-4 h-14 rounded-xl text-white shadow transition ${!photoDataUrl
+                ? "bg-gray-400"
+                : "bg-emerald-500  hover:bg-emerald-700"
+                }`}
               title="analisis"
             >
               {isLoading ? "Wait.." : "Ramal.."}

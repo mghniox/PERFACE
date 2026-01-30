@@ -91,15 +91,15 @@ export async function analyzeAction(prevState, formData) {
       {
         role: "system",
         content: "anda penganalisis foto dan profesi kamu adalah seorang PENGKRITIK TAJAM ,keluarkan HTML ringkas dan aman"
-      },{
+      }, {
         role: "user",
         content: [
-            { type:"text", text: instruction},
-            {type: "image_url", image_url:{url: imageDataUrl} }
+          { type: "text", text: instruction },
+          { type: "image_url", image_url: { url: imageDataUrl } }
         ]
       }
     ],
-    max_tokens:600,
+    max_tokens: 600,
     temperature: 0.2
   };
 
@@ -108,17 +108,17 @@ export async function analyzeAction(prevState, formData) {
   const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
     headers: {
-        Authorization: `Bearer ${OPENROUTER_API_KEY}`,
-        "Content-Type": "application/json",
-        "Referer": process.env.NODE_ENV === 'production' ? 'https://perface.vercel.app/' : 'http://localhost:3000',
-        "X-Title" : "PERFACE"
+      Authorization: `Bearer ${OPENROUTER_API_KEY}`,
+      "Content-Type": "application/json",
+      "Referer": process.env.NODE_ENV === 'production' ? 'https://perface.vercel.app/' : 'http://localhost:3000',
+      "X-Title": "PERFACE"
     },
     body: JSON.stringify(body),
     cache: "no-store"
   })
   clearTimeout(timeoutId)
 
-  if(!res.ok) {
+  if (!res.ok) {
     const t = await res.text()
     console.error("ERROR: ", res.status, t)
     return {
@@ -129,5 +129,5 @@ export async function analyzeAction(prevState, formData) {
 
   const data = await res.json()
   const html = String(data?.choices?.[0]?.message?.content ?? "")
-  return{ ok:true, html, rid}
+  return { ok: true, html, rid }
 }
