@@ -186,7 +186,7 @@ const Camera = () => {
           screenshotFormat="image/jpeg"
         />
         {photoDataUrl && (
-          <img src={photoDataUrl} alt="Capture" className="absolute inset-0 w-full h-full object-cover"/>
+          <img src={photoDataUrl} alt="Capture" className="absolute inset-0 w-full h-full object-contain"/>
         )}
 
         <div className="absolute flex left-1/2 -translate-1/2 items-center gap-3 bottom-1 shadow">
