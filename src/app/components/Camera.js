@@ -253,15 +253,14 @@ const Camera = () => {
           {htmlToRender.trim() ? (
             <div className="text-base leading-6
                 [&_section]:mt-5
-                [&_h2]:mt-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:px-3
+                [&_h2]:mt-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:px-1
                 [&_article]:mt-5
-                [&_li]:
                 [&_h3]:text-lg [&_h3]:font-medium [&_h3]:mb-1
                 "
                 dangerouslySetInnerHTML={{__html: htmlToRender}}/>
           ) : (
             <div className="bg-gray-500 p-4 mt-2 rounded-xl">
-              <p className="font-semibold text-white">Foto Yang Keren Kemudian Tekan Ramalkan</p>
+              <p className="font-semibold text-white">Capture Lalu Tekan Ramal</p>
             </div>
           )}
         </div>
