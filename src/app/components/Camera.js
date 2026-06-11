@@ -43,11 +43,10 @@ const Camera = () => {
 
 
   const isPotrait = usePotrait();
+  
   const videoContrains = useMemo(
     () => ({
       facingMode: "user",
-      width: { ideal: isPotrait ? 720 : 1280 },
-      height: { ideal: isPotrait ? 1280 : 720 },
       frameRate: { ideal: 30, max: 60 },
     }),
     [isPotrait],
