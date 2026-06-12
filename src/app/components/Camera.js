@@ -4,11 +4,12 @@ import Webcam from "react-webcam";
 import { FiBookOpen,FiCamera,FiRefreshCw } from "react-icons/fi";
 import { anylizeAction } from "@/action/anylizeAction";
 
+// Mendeteksi Layar ( Potrait or landscape )
 const usePotrait = () => {
   // Membaca layar user => Desktop / mobile
   const [Potrait, setIsPotrait] = useState(false);
 
-  useEffect(() => {
+  useEffect(() => { //Pengecekan yang Berjalan Sekali saat aplikasi dibuka
     const screenMedia = window.matchMedia("(orientation: portrait)");
 
     const onChange = () => setIsPotrait(screenMedia.matches);
@@ -43,10 +44,11 @@ const Camera = () => {
 
 
   const isPotrait = usePotrait();
-  
   const videoContrains = useMemo(
     () => ({
       facingMode: "user",
+      width: { ideal: isPotrait ? 720 : 1280 },
+      height: { ideal: isPotrait ? 1280 : 720 },
       frameRate: { ideal: 30, max: 60 },
     }),
     [isPotrait],
@@ -63,13 +65,11 @@ const Camera = () => {
       return
     }
 
-    const vw = video.videoWidth,
-      vh = video.videoHeight;
+    const vw = video.videoWidth, vh = video.videoHeight;
 
     const targetW = isPotrait ? 720 : 1280;
     const targetH = isPotrait ? 1280 : 720;
-    const srcAspect = vw / vh,
-      dstAspect = targetW / targetH;
+    const srcAspect = vw / vh, dstAspect = targetW / targetH;
 
     let sx = 0,
       sy = 0,
@@ -96,8 +96,6 @@ const Camera = () => {
     context.drawImage(video, sx, sy, sw, sh,  0, 0, targetW, targetH);
     context.restore()
     
-
-
     const result = canvas.toDataURL("image/jpeg", 0.9);
     setPhotoDataUrl(result);
   };
@@ -171,7 +169,6 @@ const Camera = () => {
   },[state])
 
   const htmlToRender = cleanUpHTML(isTyping ? typedHtml :  responseHtml)
-  console.log(htmlToRender)
   return (
     <div>
       <div className="relative rounded-xl overflow-hidden w-full">

@@ -23,8 +23,9 @@ export const anylizeAction = async (prevState, formData) => {
 
     const model = "nvidia/nemotron-nano-12b-v2-vl:free";
     const instruction = `
-        Keluarkan HASIL dalam HTML VALID (tanpa <style> eksternal). Topik: analisis wajah/pose (hiburan) 
-    Nada tegas & ringkas. Jangan minta data lahir. Hindari hal sensitif & klaim medis/keuangan.
+        Keluarkan HASIL dalam HTML VALID (tanpa <style> eksternal) dan mayoritas user masih SEKOLAH 
+    maka keluarkan hasil yang membuat user merasa terhubung dengan  perasaan atau situasi yang sedang dihadapi. Topik: analisis wajah/pose (hiburan) 
+    Nada tegas & ringkas. Jangan minta data lahir.
     Jika Kamu TIDAK menemukan ada SEBUAH WAJAH: BALAS SEPERTI INI SAJA!:
     <section><p>Mana orangnya nih ! </p></section>
     
@@ -36,7 +37,7 @@ export const anylizeAction = async (prevState, formData) => {
                 <li>Emosi dominan (mis. senyum,datar,sedih dan lainnya)</li>
                 <li>Arah pandang, gestur & tatapan mata (menghadap kamera/menoleh; bahu rileks/tegang tatapan tajam/hangat)</li>
                 <li>Nuansa umum (energik/pemalas/pengangguran/santai)</li>
-                <li>Karakter Wajah (Pemarah/Ramah/cemberut)</li>
+                <li>Karakter Wajah (Emosi tidak stabil/Ramah/cemberut)</li>
                 <li>Personality type(Leader, Architect, Logician dan lainnya) sertakan penjelasan singkat yang mudah dimengerti</li>
             </ul>
     </section>
